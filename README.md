@@ -46,8 +46,9 @@ The goal is to develop React UI normally, then deploy it as a **Liferay Fragment
 ├── craco.config.js
 ├── package.json
 └── README.md
-
-🚀 Available Scripts
+```
+---
+## 🚀 Available Scripts
 
 npm start
 
@@ -123,7 +124,8 @@ Equivalent to:
 npm run build
 npm run sync
 
-🧩 How React Works Inside Liferay
+---
+## 🧩 How React Works Inside Liferay
 
 React is built normally with CRA
 
@@ -142,7 +144,8 @@ React mounts into:
 
 defined inside the fragment index.html
 
-📥 Deploy to Liferay
+---
+## 📥 Deploy to Liferay
 
 After running:
 
@@ -159,7 +162,8 @@ Choose No when asked about deployment descriptor
 
 Import the generated ZIP file into Liferay → Fragments
 
-⚠️ Notes & Common Pitfalls
+---
+## ⚠️ Notes & Common Pitfalls
 
 ❌ Do NOT expect App.js to render automatically in Liferay
 
@@ -169,7 +173,9 @@ Import the generated ZIP file into Liferay → Fragments
 
 ✅ Only build/ output is used
 
-🧠 Summary Flow
+---
+## 🧠 Summary Flow
+
 React Dev (App.js)
       ↓
 npm run build
@@ -182,7 +188,8 @@ Liferay Fragment
       ↓
 Rendered inside Portal
 
-📚 References
+---
+## 📚 References
 
 https://reactjs.org
 
