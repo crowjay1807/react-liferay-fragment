@@ -44,7 +44,7 @@ try {
   // 4. Tạo/Cập nhật collection.json
   const collectionJsonPath = path.join(COLLECTION_DIR, 'collection.json');
   const collectionJson = {
-    name: "React Components",
+    name: "vec-intranet",
     description: "React-based fragments for Liferay Portal"
   };
   fs.writeJsonSync(collectionJsonPath, collectionJson, { spaces: 2 });

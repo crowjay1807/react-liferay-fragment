@@ -1,15 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
-function renderApp(element) {
-  console.log('🔥 React render invoked', element);
-  const root = ReactDOM.createRoot(element);
-  root.render(<App />);
-  return root;
+// ===== CRA DEV MODE =====
+const devRoot = document.getElementById("root");
+if (devRoot) {
+  ReactDOM.createRoot(devRoot).render(<App />);
 }
 
-// expose cho Liferay
+// ===== LIFERAY MODE =====
+function renderApp(element) {
+  const root = ReactDOM.createRoot(element);
+  root.render(<App />);
+}
+
 window.ReactHelloWorldApp = {
   render: renderApp
 };
