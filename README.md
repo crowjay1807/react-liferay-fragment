@@ -1,191 +1,70 @@
-# Liferay React Fragment
+# Getting Started with Create React App
 
-This project is a **React application integrated with Liferay Fragment**.  
-It is built using **Create React App (CRA)** and includes a custom script to **build and sync React output into a Liferay Fragment structure** automatically.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The goal is to develop React UI normally, then deploy it as a **Liferay Fragment** without manual copy/paste.
+## Available Scripts
 
----
+In the project directory, you can run:
 
-## 📦 Tech Stack
+### `npm start`
 
-- React (Create React App)
-- React DOM
-- Liferay Fragment
-- Node.js
-- Custom sync script (`sync-to-liferay.js`)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
----
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## 📁 Project Structure (Important)
+### `npm test`
 
-```text
-.
-├── public/
-│   ├── index.html                # Default CRA entry (dev only)
-│   └── index-liferay.html        # Optional Liferay-specific HTML
-├── src/
-│   ├── App.js                    # Main React component
-│   ├── App.css
-│   ├── index.js                  # React bootstrap
-│   ├── assets/
-│   └── liferay-fragment/          # (Optional source for fragment logic)
-├── liferay-test/                 # Liferay workspace (target for sync)
-│   └── src/
-│       └── liferay-fragment/
-│           ├── collection.json
-│           └── fragments/
-│               └── react-hello-world/
-│                   ├── fragment.json
-│                   ├── index.html
-│                   ├── index.js
-│                   ├── index.css
-│                   └── resources/
-│                       └── static/
-├── sync-to-liferay.js             # Sync build → Liferay Fragment
-├── craco.config.js
-├── package.json
-└── README.md
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-🚀 Available Scripts
+### `npm run build`
 
-npm start
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Runs the React app in development mode.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-npm start
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-App runs at: http://localhost:3000
+### `npm run eject`
 
-Hot reload enabled
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Used for development only
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-❌ Not used by Liferay
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-npm test
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Runs tests in watch mode.
+## Learn More
 
-npm test
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-npm run build
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Builds the React app for production.
+### Code Splitting
 
-npm run build
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
+### Analyzing the Bundle Size
 
-Output goes to build/
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Generates optimized static files:
+### Making a Progressive Web App
 
-static/js/main.*.js
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-static/css/main.*.css
+### Advanced Configuration
 
-npm run sync
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-Syncs the React build output into a Liferay Fragment structure.
+### Deployment
 
-npm run sync
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+### `npm run build` fails to minify
 
-What this script does:
-
-Verifies build/ exists
-
-Copies build/static → fragment resources/
-
-Auto-detects hashed main.*.js and main.*.css
-
-Generates:
-
-index.html
-
-index.js
-
-index.css
-
-fragment.json
-
-Updates collection.json
-
-⭐ npm run build:liferay (Recommended)
-
-Build + sync in one command.
-
-npm run build:liferay
-
-
-Equivalent to:
-
-npm run build
-npm run sync
-
-🧩 How React Works Inside Liferay
-
-React is built normally with CRA
-
-The build exposes a global render function (for example: window.ReactHelloWorldApp)
-
-Liferay Fragment:
-
-Loads static JS/CSS from resources
-
-Calls window.ReactHelloWorldApp.render(rootElement)
-
-React mounts into:
-
-<div id="react-root"></div>
-
-
-defined inside the fragment index.html
-
-📥 Deploy to Liferay
-
-After running:
-
-npm run build:liferay
-
-
-Then:
-
-cd liferay-test
-npm run compress
-
-
-Choose No when asked about deployment descriptor
-
-Import the generated ZIP file into Liferay → Fragments
-
-⚠️ Notes & Common Pitfalls
-
-❌ Do NOT expect App.js to render automatically in Liferay
-
-✅ React must be mounted manually via fragment index.js
-
-❌ npm start is NOT used in Liferay
-
-✅ Only build/ output is used
-
-🧠 Summary Flow
-React Dev (App.js)
-      ↓
-npm run build
-      ↓
-static/js + static/css
-      ↓
-npm run sync
-      ↓
-Liferay Fragment
-      ↓
-Rendered inside Portal
-
-📚 References
-
-https://reactjs.org
-
-https://learn.liferay.com
-
-https://github.com/facebook/create-react-app
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
