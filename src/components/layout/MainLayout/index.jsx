@@ -1,39 +1,27 @@
 import React, { useState } from "react";
-import { useNavigate, useLocation, Outlet } from "react-router-dom";
-import { MenuFoldOutlined, MenuUnfoldOutlined, HomeOutlined, DesktopOutlined, FileTextOutlined, TeamOutlined } from "@ant-design/icons";
-import { Button, Layout, Menu, theme } from "antd";
-import { StyledLayout, StyledHeader, StyledContent } from "./style";
-import { menuItems } from "../../../router/menuConfig";
+import { Outlet, useLocation } from "react-router-dom";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { Button, Layout, theme } from "antd";
+import { StyledLayout, StyledHeader, StyledContent, StyledTitle } from "./style";
+import LeftMenu from "./components/LeftMenu";
+import { menuSections } from "../../../router/menuConfig";
 
 const { Sider } = Layout;
 
-const menuIcons = {
-  "/": HomeOutlined,
-  "/van-phong-dien-tu": DesktopOutlined,
-  "/doi-soat-thu-phi": FileTextOutlined,
-  "/cong-thong-tin-nhan-su": TeamOutlined,
-};
-
 function MainLayout() {
   const [collapsed, setCollapsed] = useState(false);
-  const navigate = useNavigate();
-  const { pathname } = useLocation();
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-
-  const items = menuItems.map((item) => ({
-    key: item.key,
-    icon: React.createElement(menuIcons[item.key] || HomeOutlined),
-    label: item.label,
-    onClick: () => navigate(item.key === "/" ? "/" : item.key),
-  }));
+  const pathname = useLocation().pathname;
+  const listFlatMenu = menuSections.flatMap((section) => section.items);
+  const currentMenu = listFlatMenu.find((item) => item.key === pathname);
 
   return (
     <StyledLayout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
+      <Sider trigger={null} collapsible collapsed={collapsed} width={300}>
         <div className="demo-logo-vertical" />
-        <Menu theme="dark" mode="inline" selectedKeys={[pathname]} items={items} />
+        <LeftMenu collapsed={collapsed} />
       </Sider>
       <Layout>
         <StyledHeader style={{ background: colorBgContainer, padding: 0 }}>
@@ -47,6 +35,7 @@ function MainLayout() {
               height: 64,
             }}
           />
+          <StyledTitle>{currentMenu?.label}</StyledTitle>
         </StyledHeader>
         <StyledContent>
           <Outlet />
