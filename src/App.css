@@ -1,0 +1,14 @@
+.app-layout {
+  display: flex;
+  gap: 16px;              /* space between columns */
+  align-items: flex-start;
+}
+
+/* Adjust widths as per UI */
+.left-panel {
+  flex: 2;                /* ~65% */
+}
+
+.right-panel {
+  flex: 1;                /* ~35% */
+}
