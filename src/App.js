@@ -1,26 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React from "react";
+import "@ant-design/v5-patch-for-react-19";
+import "./App.css";
 
-// Import hình ảnh - bạn sẽ thêm các file này vào thư mục src/
+import { ConfigProvider } from "antd";
+import AppRouter from "./router";
+import vi_VN from 'antd/es/locale/vi_VN';
+import dayjs from 'dayjs';
 
-import News from './components/News'
-import TrafficCameraMonitor from './components/Trafficcameramonitor';
+import 'dayjs/locale/vi';
+
+dayjs.locale('vi');
 
 function App() {
- 
-
   return (
-
-
-        <div className="app-layout">
-      <div className="left-panel">
-        <News />
-      </div>
-
-      <div className="right-panel">
-        <TrafficCameraMonitor />
-      </div>
-    </div>
+    <ConfigProvider
+      locale={vi_VN}
+      theme={{
+        token: {
+          fontFamily: "Inter, sans-serif",
+          colorPrimary: "#0090CF",
+        },
+      }}
+    >
+      <AppRouter />
+    </ConfigProvider>
   );
 }
 

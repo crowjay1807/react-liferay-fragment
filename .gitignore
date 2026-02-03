@@ -39,3 +39,6 @@ liferay-test/.cache/
 .idea/
 .vscode/
 *.iml
+
+# =========================
+debug.log
