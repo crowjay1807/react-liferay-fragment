@@ -79,7 +79,7 @@ function DataReconciliationTable({ dataSource = mockDataReconciliation, onView }
       <CTable
         columns={columns}
         dataSource={dataSource}
-        scroll={{ x: 1800 }}
+        scroll={{ x: 1800, y: 480 }}
         pagination={false}
         size="small"
       />

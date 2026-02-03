@@ -23,6 +23,7 @@ function TablePagination({
     onChange: (p, size) => onChange?.(p, size || 10),
     showTotal: (t) => `Hiển thị ${pageSize} / ${t}`,
     locale,
+    size: 'small',
   };
 
   return (

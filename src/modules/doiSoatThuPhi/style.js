@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Row } from "antd";
 
 export const PageWrap = styled.div`
   padding: 0;
@@ -6,26 +7,24 @@ export const PageWrap = styled.div`
 
 export const FilterSection = styled.div`
   margin-bottom: 16px;
+
+  .ant-form-inline {
+    .ant-form-item {
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+    .ant-form-item-label > label {
+      font-size: 13px;
+      color: rgba(0, 0, 0, 0.65);
+    }
+  }
 `;
 
-export const FilterRow = styled.div`
+export const FilterRow = styled(Row)`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
   margin-bottom: ${(p) => (p.$last ? 0 : "12px")};
-`;
-
-export const FilterItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  .filter-label {
-    font-size: 13px;
-    color: rgba(0, 0, 0, 0.65);
-    white-space: nowrap;
-  }
 `;
 
 export const TableWrap = styled.div`
@@ -38,8 +37,6 @@ export const PaginationWrap = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  margin-top: 16px;
-  padding: 12px 0;
 `;
 
 export const ActionIconBtn = styled.button`

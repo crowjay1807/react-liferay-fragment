@@ -4,8 +4,7 @@ import ReportTable from "./ReportTable";
 import TablePagination from "./TablePagination";
 
 function ReportTab({
-  dateRange,
-  onDateChange,
+  initialValues,
   onSearch,
   dataSource,
   pagination = {},
@@ -14,11 +13,7 @@ function ReportTab({
 
   return (
     <>
-      <ReportFilter
-        dateRange={dateRange}
-        onDateChange={onDateChange}
-        onSearch={onSearch}
-      />
+      <ReportFilter initialValues={initialValues} onSearch={onSearch} />
       <ReportTable dataSource={dataSource} />
       <TablePagination
         current={current}

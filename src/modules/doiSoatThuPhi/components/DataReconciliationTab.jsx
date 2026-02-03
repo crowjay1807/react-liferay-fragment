@@ -4,8 +4,7 @@ import DataReconciliationTable from "./DataReconciliationTable";
 import TablePagination from "./TablePagination";
 
 function DataReconciliationTab({
-  dateRange,
-  onDateChange,
+  initialValues,
   onSearch,
   dataSource,
   onView,
@@ -15,11 +14,7 @@ function DataReconciliationTab({
 
   return (
     <>
-      <DataReconciliationFilter
-        dateRange={dateRange}
-        onDateChange={onDateChange}
-        onSearch={onSearch}
-      />
+      <DataReconciliationFilter initialValues={initialValues} onSearch={onSearch} />
       <DataReconciliationTable dataSource={dataSource} onView={onView} />
       <TablePagination
         current={current}

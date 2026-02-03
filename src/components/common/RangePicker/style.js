@@ -18,4 +18,9 @@ export const StyledRangePicker = styled(DatePicker.RangePicker)`
   &:disabled {
     color: #2d394b;
   }
+
+  .ant-picker-suffix{
+    display: none;
+  }
+
 `;
