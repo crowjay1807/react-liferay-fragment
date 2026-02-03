@@ -12,63 +12,63 @@ const TrafficCameraMonitor = () => {
     {
       id: 1,
       name: 'Cam 1',
-      thumbnail: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop',
+      thumbnail: 'http://45.77.240.85:8080/documents/d/vec/d7536992e4b7afce1e2426e1fc3475e2c45e3340',
       videoUrl: '#',
       location: 'Intersection A'
     },
     {
       id: 2,
       name: 'Cam 2',
-      thumbnail: 'https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?w=400&h=300&fit=crop',
+      thumbnail: 'http://45.77.240.85:8080/documents/d/vec/b9a7340e006d955b7cbd8867d0a0d14f3fdf1c3d',
       videoUrl: '#',
       location: 'Highway Section B'
     },
     {
       id: 3,
       name: 'Cam 3',
-      thumbnail: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?w=400&h=300&fit=crop',
+      thumbnail: 'http://45.77.240.85:8080/documents/d/vec/b8c7ab75a5005190f0cb595450b73c8f9ee5c2b3',
       videoUrl: '#',
       location: 'City Center'
     },
     {
       id: 4,
       name: 'Cam 4',
-      thumbnail: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&h=300&fit=crop',
+      thumbnail: 'http://45.77.240.85:8080/documents/d/vec/9891561172b8c0bd94fdc4507a269c4e0da17bd6',
       videoUrl: '#',
       location: 'Downtown Area'
     },
     {
       id: 5,
       name: 'Cam 5',
-      thumbnail: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400&h=300&fit=crop',
+      thumbnail: 'http://45.77.240.85:8080/documents/d/vec/429da88e8e6eb9ac9152fafe3a917cc33f216b0f',
       videoUrl: '#',
       location: 'Express Lane'
     },
     {
       id: 6,
       name: 'Cam 6',
-      thumbnail: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop',
+      thumbnail: 'http://45.77.240.85:8080/documents/d/vec/83ce94347bf61926720963008c61d4a8ae570e0b',
       videoUrl: '#',
       location: 'Junction C'
     },
     {
       id: 7,
       name: 'Cam 7',
-      thumbnail: 'https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?w=400&h=300&fit=crop',
+      thumbnail: 'http://45.77.240.85:8080/documents/d/vec/8e1aac44fccc3e55934ca897c7fb2be204dc6ff6',
       videoUrl: '#',
       location: 'Bridge Overpass'
     },
     {
       id: 8,
       name: 'Cam 8',
-      thumbnail: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?w=400&h=300&fit=crop',
+      thumbnail: 'http://45.77.240.85:8080/documents/d/vec/5b65b612e31e1a6171d3c883e8a6d818f78dfded',
       videoUrl: '#',
       location: 'Tunnel Entrance'
     },
     {
       id: 9,
       name: 'Cam 9',
-      thumbnail: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&h=300&fit=crop',
+      thumbnail: 'http://45.77.240.85:8080/documents/d/vec/02eedf4acdd1f86a3c48ba4c07b8241d2540e6a0',
       videoUrl: '#',
       location: 'Exit Ramp'
     }
@@ -123,10 +123,11 @@ const TrafficCameraMonitor = () => {
     <div className="traffic-camera-monitor">
       <div className="traffic-camera-monitor__header">
         <div className="traffic-camera-monitor__header-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 8C13.1 8 14 7.1 14 6C14 4.9 13.1 4 12 4C10.9 4 10 4.9 10 6C10 7.1 10.9 8 12 8Z" fill="white"/>
-            <path d="M12 10C9.79 10 8 11.79 8 14V18C8 18.55 8.45 19 9 19C9.55 19 10 18.55 10 18V14C10 12.9 10.9 12 12 12C13.1 12 14 12.9 14 14V18C14 18.55 14.45 19 15 19C15.55 19 16 18.55 16 18V14C16 11.79 14.21 10 12 10Z" fill="white"/>
-          </svg>
+               <img 
+            src="http://45.77.240.85:8080/documents/d/vec/container" 
+            alt="Logo"
+            className="traffic-camera-monitor__header-logo"
+          />
         </div>
         <h1 className="traffic-camera-monitor__header-title">Camera giao thông</h1>
       </div>
@@ -189,9 +190,13 @@ const TrafficCameraMonitor = () => {
                 />
                 <div className="traffic-camera-monitor__camera-card-overlay">
                   <button className="traffic-camera-monitor__camera-card-play-button">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                      <path d="M11 8L21 16L11 24V8Z" fill="white"/>
-                    </svg>
+                       <img 
+                      src="http://45.77.240.85:8080/documents/d/vec/link-1" 
+                      alt="Play"
+                      className="traffic-camera-monitor__camera-card-play-icon"
+                      width="32"
+                      height="32"
+                    />
                   </button>
                 </div>
               </div>
