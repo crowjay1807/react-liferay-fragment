@@ -10,7 +10,7 @@ function App() {
     <ConfigProvider
       theme={{
         token: {
-          fontFamily: "Inter",
+          fontFamily: "Inter, sans-serif",
           colorPrimary: "#0090CF",
         },
       }}

@@ -6,14 +6,16 @@ export const StyledLayout = styled(Layout)`
 `;
 
 export const StyledHeader = styled(Layout.Header)`
-  padding: 0 24px;
+  padding: 7px 24px 7px 14px !important;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
 `;
 
 export const StyledContent = styled(Layout.Content)`
-  margin: 24px;
-  padding: 24px;
+  margin: 12px;
+  padding: 12px;
   min-height: 280px;
   background: #fff;
   border-radius: 8px;
@@ -123,4 +125,18 @@ export const StyledTitle = styled.p`
   font-size: 18px;
   line-height: 100%;
   letter-spacing: 0px;
+  margin-bottom: 0;
+`;
+
+export const AccountWrap = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const StyledFooter = styled(Layout.Footer)`
+  text-align: center;
+  padding: 12px;
+  background: #0090CF;
+  line-height: 29px;
+  color: #fff;
 `;
